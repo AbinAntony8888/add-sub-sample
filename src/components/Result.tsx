@@ -9,7 +9,7 @@ function Result({ outPut }: Reslt) {
       <div>
         <h1>{outPut}</h1>
       </div>
-      <UserInput value={"React js sample............"}/>
+      <UserInput/>
     </div>
   );
 }
