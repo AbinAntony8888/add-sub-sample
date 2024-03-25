@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Result from './components/Result';
 import Buttons from './components/Buttons';
@@ -14,10 +14,12 @@ function App() {
   }
   return (
     <div className="App">
+       <br />
+     <Buttons add={addNumber} sub={subNumber}/>
       <br />
      <Result outPut={count}/>
      <br />
-     <Buttons add={addNumber} sub={subNumber}/>
+    
     </div>
   );
 

@@ -9,7 +9,7 @@ function Result({ outPut }: Reslt) {
       <div>
         <h1>{outPut}</h1>
       </div>
-      <UserInput/>
+      <UserInput item={""} index={0}/>
     </div>
   );
 }
