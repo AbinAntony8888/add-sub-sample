@@ -32,11 +32,15 @@ export default function UserInput({item,index}:InputTyp) {
 
       <ol>
         {inputArray.map((item, index) => (
-          <li
-           key={index}>{item} 
+          <li>
+          {/* //  key={index}>{item}  */}
+          <input type="checkbox" />
+          <input value={item} />
+          <button className="bg-[#e34e4e] mt-2 p-1" >Delete</button>
            </li>
         ))}
       </ol>
+
     </div>
   );
 }
