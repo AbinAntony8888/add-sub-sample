@@ -1,21 +1,27 @@
 import React, { ChangeEvent, useState } from "react";
 type InputTyp = {
-  item: string,
-  index:number;
+  item: string;
+  index: number;
 };
-export default function UserInput({item,index}:InputTyp) {
+export default function UserInput() {
   const [input, setInput] = useState<string>("");
   const [inputArray, setInputArray] = useState<string[]>([]);
 
-  // const handleChange=(event: ChangeEvent<HTMLInputElement>): void =>{
   const handleChange = (event: any): void => {
     setInput(event.target.value);
   };
-  // const handleSubmit=(event:  React.FormEvent<HTMLFormElement>):void=>{
   const handleSubmit = (event: any): void => {
     event.preventDefault();
-    setInputArray([...inputArray, input]);
-    setInput("");
+    if (input !== "") {
+      setInputArray([...inputArray, input]);
+      setInput("");
+    }
+  };
+  const Delete = (indx: any) => {
+    console.log("haii..........");
+    const delArray = [...inputArray];
+    delArray.splice(indx, 1);
+    setInputArray(delArray);
   };
 
   return (
@@ -33,14 +39,15 @@ export default function UserInput({item,index}:InputTyp) {
       <ol>
         {inputArray.map((item, index) => (
           <li>
-          {/* //  key={index}>{item}  */}
-          <input type="checkbox" />
-          <input value={item} />
-          <button className="bg-[#e34e4e] mt-2 p-1" >Delete</button>
-           </li>
+            {/* //  key={index}>{item}  */}
+            <input type="checkbox" />
+            <input value={item} />
+            <button className="bg-[#e34e4e] mt-2 p-1" onClick={Delete}>
+              Delete
+            </button>
+          </li>
         ))}
       </ol>
-
     </div>
   );
 }
