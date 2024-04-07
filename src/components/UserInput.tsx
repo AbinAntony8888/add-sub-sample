@@ -23,6 +23,9 @@ export default function UserInput() {
     delArray.splice(indx, 1);
     setInputArray(delArray);
   };
+  const clearAll=()=>{
+    setInputArray([]);
+  }
 
   return (
     <div>
@@ -48,6 +51,7 @@ export default function UserInput() {
           </li>
         ))}
       </ol>
+      <button onClick={clearAll} className="bg-[red] text-white mt-4 p-1">clear all</button>
     </div>
   );
 }
